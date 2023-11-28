@@ -144,6 +144,7 @@ namespace KTGK_OOP
             Console.WriteLine("May lanh: {0}", MayLanh);
             Console.WriteLine("Phi may lanh: {0}", PhiMayLanh());
             Console.WriteLine("Tien phong: {0}", TinhTienPhong());
+            Console.WriteLine("--");
         }
 
 

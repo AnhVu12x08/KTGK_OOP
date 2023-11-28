@@ -39,11 +39,8 @@ namespace KTGK_OOP
             XmlDocument read = new XmlDocument();
             read.Load(filepath);
 
-            ///////////////BUG HERE/////////////////////
-
-            //XmlNodeList nod = read.SelectSingleNode("/khutro");
-            //string tenKhuTro = nod.["ten"];
-            //string diaChi = nod.SelectSingleNode[0]("diachi").InnerText;
+            TenKhuTro = read.SelectSingleNode("/khutro/ten").InnerText;
+            DiaChi = read.SelectSingleNode("/khutro/diachi").InnerText;
 
             XmlNodeList dsTro = read.SelectNodes("/khutro/phongs/phong");
             foreach (XmlNode node in dsTro)
@@ -57,10 +54,12 @@ namespace KTGK_OOP
                 this.dsNhaTro.Add(nhaTro);
             }
         }
+
         public void Xuat()
         {
             Console.WriteLine("Ten khu tro: " + tenKhuTro);
             Console.WriteLine("Dia chi: " + diaChi);
+            Console.WriteLine("===");
             foreach (NhaTro nhaTro in dsNhaTro)
             {
                 nhaTro.Xuat();
@@ -78,15 +77,23 @@ namespace KTGK_OOP
         public void SapXep()
         {
             dsNhaTro.Sort((x, y) => x.TinhTienPhong().CompareTo(y.TinhTienPhong()));
+
+        }
+        public void XuatPhongSuDungNhieuDienNhat()
+        {
+            NhaTro nhaTro = dsNhaTro[0];
+            foreach (NhaTro nt in dsNhaTro)
+            {
+                if (nt.SoDien > nhaTro.SoDien)
+                {
+                    nhaTro = nt;
+                }
+            }
+            Console.WriteLine("===");
+            Console.WriteLine("Phong su dung nhieu dien nhat: ");
+            nhaTro.Xuat();
         }
 
 
-
-
-
-
     }
-
-
-
 }
