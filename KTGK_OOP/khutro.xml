@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<khutro>
+	<ten>test</ten>
+	<diachi>test dia chi</diachi>
+	<phongs>
+		<phong>
+			<loai>0</loai>
+			<map>PT02</map>
+			<soluong>1</soluong>
+			<sodien>40</sodien>
+			<gia>12.3000</gia>
+		</phong>
+		<phong>
+			<loai>1</loai>
+			<map>PT05</map>
+			<soluong>0</soluong>
+			<sodien>43</sodien>
+			<gia>122.3000</gia>
+		</phong>
+		<phong>
+			<loai>1</loai>
+			<map>PT09</map>
+			<soluong>9</soluong>
+			<sodien>43</sodien>
+			<gia>112.3000</gia>
+		</phong>
+	</phongs>
+</khutro>
+
+
+
